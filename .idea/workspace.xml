@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0debd9ba-9ebe-4bcf-a4af-3ada77a0cd27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/templates/admin/announcements/change_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/templates/announcements/announcements_change_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="0debd9ba-9ebe-4bcf-a4af-3ada77a0cd27" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +11,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/announcements/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -29,7 +23,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -186,6 +180,14 @@
       <option name="presentableId" value="Default" />
       <updated>1528090150141</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added send announcement">
+      <created>1528180512168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528180512168</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -214,6 +216,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added send announcement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added send announcement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -265,22 +271,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
