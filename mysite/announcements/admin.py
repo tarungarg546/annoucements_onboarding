@@ -8,9 +8,13 @@ class AnnouncementsAdmin(admin.ModelAdmin):
 
     def response_change(self, request, obj):
         if "_send_announcement" in request.POST:
+            user_list = request.POST.getlist('users')
             users = User.objects.all()
-            for user in users:
-                print str(user) + ' ' + request.POST['title'] + ' ' +request.POST['message']
+
+            for u in user_list:
+                for user in users:
+                    if int(u) == user.id:
+                        print str(user) + ' ' + request.POST['title'] + ' ' + request.POST['message']
 
         return super(AnnouncementsAdmin, self).response_change(request, obj)   
 
