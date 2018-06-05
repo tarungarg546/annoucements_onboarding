@@ -14,8 +14,8 @@ class Announcements(models.Model):
     # date_time_published = models.DateTimeField('datetime published', help_text='The date and time you want to schedule announcement/notification')
     date_time_expire = models.DateTimeField('datetime expire', help_text='The date and time you want the announcement to expire')
 
-    added = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    added_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     users = models.ManyToManyField(User)
 
@@ -27,11 +27,3 @@ class Announcements(models.Model):
         #     raise ValidationError("The date and time can't be in past")
         if self.date_time_expire <= timezone.now():
             raise ValidationError("The date and time can't be in past")
-
-    # def save(self, *args, **kwargs):
-    #
-    #     # print self.title + ' ' + self.message
-    #     super(Announcements, self).save(*args, **kwargs)
-    #     # users = User.objects.all()
-    #     # for user in users:
-    #     #     print str(user) + ' '+ self.title + ' ' + self.message
