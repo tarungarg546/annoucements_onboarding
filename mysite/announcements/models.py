@@ -26,10 +26,10 @@ class Announcements(models.Model):
         if self.date_time_expire <= timezone.now():
             raise ValidationError("The date and time can't be in past")
 
-    def save(self, *args, **kwargs):
-
-        # print self.title + ' ' + self.message
-        super(Announcements, self).save(*args, **kwargs)
-        users = User.objects.all()
-        for user in users:
-            print str(user) + ' '+ self.title + ' ' + self.message
+    # def save(self, *args, **kwargs):
+    #
+    #     # print self.title + ' ' + self.message
+    #     super(Announcements, self).save(*args, **kwargs)
+    #     # users = User.objects.all()
+    #     # for user in users:
+    #     #     print str(user) + ' '+ self.title + ' ' + self.message
