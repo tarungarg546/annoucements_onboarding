@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Announcements
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 
 class AnnouncementsAdmin(admin.ModelAdmin):
@@ -9,13 +9,11 @@ class AnnouncementsAdmin(admin.ModelAdmin):
 
     def response_change(self, request, obj):
         if "_send_announcement" in request.POST:
-            user_list = request.POST.getlist('users')
-            users = User.objects.all()
+            group_list = request.POST.getlist('groups')
+            group_users = User.objects.filter(groups__id__in=group_list).distinct()
 
-            for u in user_list:
-                for user in users:
-                    if int(u) == user.id:
-                        print str(user) + ' ' + request.POST['title'] + ' ' + request.POST['message']
+            for user in group_users:
+                print("{} {} {}".format(str(user), request.POST['title'], request.POST['message']))
 
         return super(AnnouncementsAdmin, self).response_change(request, obj)   
 

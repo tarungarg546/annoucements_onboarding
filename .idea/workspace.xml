@@ -4,13 +4,6 @@
     <list default="true" id="0debd9ba-9ebe-4bcf-a4af-3ada77a0cd27" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/announcements/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0002_auto_20180604_1146.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0003_auto_20180604_1210.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0004_auto_20180604_1229.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0005_auto_20180604_1232.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0006_auto_20180604_1405.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0007_remove_announcements_date_time_published.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/announcements/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
@@ -23,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/announcements/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="281">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -38,8 +31,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="54" lean-forward="true" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -47,11 +40,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/AnnouncementSystem/local/lib/python2.7/site-packages/django/contrib/auth/models.py">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="0001_squashed_0005_auto_20180606_1000.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0005_auto_20180606_1000.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="368" column="6" selection-start-line="368" selection-start-column="6" selection-end-line="368" selection-end-column="6" />
+            <state relative-caret-position="180">
+              <caret line="15" column="66" lean-forward="true" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -105,10 +103,11 @@
         <option value="$PROJECT_DIR$/mysite/announcements/templates/admin/change_form.html" />
         <option value="$PROJECT_DIR$/mysite/announcements/templates/admin/announcements/change_form.html" />
         <option value="$PROJECT_DIR$/mysite/announcements/templates/announcements/announcements_change_form.html" />
-        <option value="$PROJECT_DIR$/mysite/announcements/admin.py" />
-        <option value="$PROJECT_DIR$/mysite/announcements/models.py" />
         <option value="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0009_auto_20180605_1556.py" />
         <option value="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180605_1610.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/models.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/admin.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0005_auto_20180606_1000.py" />
       </list>
     </option>
   </component>
@@ -213,9 +212,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="SVN Repositories" weight="0.3286385" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960877" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960877" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5015649" side_tool="true" weight="0.33020344" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286385" />
@@ -223,7 +223,7 @@
       <window_info anchor="bottom" id="Version Control" sideWeight="0.49921754" weight="0.3286385" />
       <window_info anchor="bottom" id="Python Console" weight="0.3286385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49843505" visible="true" weight="0.33020344" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49843505" visible="true" weight="0.33020344" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -281,28 +281,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0007_remove_announcements_date_time_published.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0006_auto_20180604_1405.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/AnnouncementSystem/local/lib/python2.7/site-packages/django/contrib/auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="368" column="6" selection-start-line="368" selection-start-column="6" selection-end-line="368" selection-end-column="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0008_announcements_users.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -316,16 +299,6 @@
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0002_auto_20180605_1610.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="54" lean-forward="true" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0009_auto_20180605_1556.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -335,20 +308,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180605_1610.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="-63">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0002_announcements_test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/AnnouncementSystem/local/lib/python2.7/site-packages/django/contrib/auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="368" column="6" selection-start-line="368" selection-start-column="6" selection-end-line="368" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0005_auto_20180606_1000.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0005_auto_20180606_1000.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="66" lean-forward="true" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="281">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
