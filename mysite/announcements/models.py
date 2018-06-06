@@ -1,11 +1,12 @@
 import datetime
 
+from django import forms
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
 from django.contrib import admin
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 @python_2_unicode_compatible
 class Announcements(models.Model):
@@ -17,7 +18,7 @@ class Announcements(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    users = models.ManyToManyField(User)
+    groups = models.ManyToManyField(Group)
 
     def __str__(self):
         return self.title
