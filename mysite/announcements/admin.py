@@ -10,7 +10,7 @@ class AnnouncementsAdmin(admin.ModelAdmin):
     def response_change(self, request, obj):
         if "_send_announcement" in request.POST:
             group_list = request.POST.getlist('groups')
-            group_users = User.objects.filter(groups__id__in=group_list).distinct()
+            group_users = User.objects.values_list('username', flat=True).filter(groups__id__in=group_list).distinct()
 
             for user in group_users:
                 print("{} {} {}".format(str(user), request.POST['title'], request.POST['message']))
