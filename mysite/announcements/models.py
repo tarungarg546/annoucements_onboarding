@@ -6,7 +6,8 @@ from django.contrib.auth.models import Group
 
 @python_2_unicode_compatible
 class Announcements(models.Model):
-    is_active = models.BooleanField(default=False, help_text='Marked as active till our announcement is live')
+    is_active = models.BooleanField(default=False, help_text='Marked when announcement is active')
+    has_expired = models.BooleanField(default=False, help_text='Marked when announcement expires')
     title = models.CharField(max_length=32, help_text='This will be shown as the title of notification and announcement')
     message = models.CharField(max_length=200, help_text='The message you want to convey')
     date_time_to_publish = models.DateTimeField('datetime publish', help_text='Schedule date and time for announcement')

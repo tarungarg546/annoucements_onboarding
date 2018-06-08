@@ -142,4 +142,8 @@ CELERY_BEAT_SCHEDULE = {
         'task': 'announcements.tasks.check_scheduled_announcements',
         'schedule': crontab(),
     },
+    'expire-announcements': {
+        'task': 'announcements.tasks.expire_announcements',
+        'schedule': crontab(),
+    },
 }
