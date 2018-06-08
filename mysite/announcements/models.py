@@ -4,12 +4,13 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
 from django.contrib.auth.models import Group
 
-
 @python_2_unicode_compatible
 class Announcements(models.Model):
+    is_active = models.BooleanField(default=False, help_text='Marked as active till our announcement is live')
     title = models.CharField(max_length=32, help_text='This will be shown as the title of notification and announcement')
     message = models.CharField(max_length=200, help_text='The message you want to convey')
-    date_time_expire = models.DateTimeField('datetime expire', help_text='The date and time you want the announcement to expire')
+    date_time_to_publish = models.DateTimeField('datetime publish', help_text='Schedule date and time for announcement')
+    date_time_expire = models.DateTimeField('datetime expire', help_text='Expiry date and time for announcement')
 
     added_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -20,5 +21,7 @@ class Announcements(models.Model):
         return self.title
 
     def clean(self):
+        if self.date_time_to_publish <= timezone.now():
+            raise ValidationError("The date and time can't be in past")
         if self.date_time_expire <= timezone.now():
             raise ValidationError("The date and time can't be in past")
