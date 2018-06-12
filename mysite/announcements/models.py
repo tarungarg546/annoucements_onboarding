@@ -17,8 +17,8 @@ class Announcements(models.Model):
 
     groups = models.ManyToManyField(Group)
 
-    created_at = models.DateTimeField(editable=False)
-    modified_at = models.DateTimeField(editable=False)
+    created_date = models.DateTimeField(auto_now_add=True)
+    modified_date = models.DateTimeField(auto_now=True)
 
     sent_at = models.DateTimeField(editable=False, null=True, blank=True)
 
@@ -28,10 +28,5 @@ class Announcements(models.Model):
     def clean(self):
         if (self.date_time_to_publish <= timezone.now()) or (self.date_time_expire <= timezone.now()):
             raise ValidationError("The date and time can't be in past")
-
-    def save(self, *args, **kwargs):
-        # On save, update timestamps
-        if not self.id:
-            self.created_at = timezone.now()
-        self.modified_at = timezone.now()
-        return super(Announcements, self).save(*args, **kwargs)
+        if self.date_time_expire <= self.date_time_to_publish:
+            raise ValidationError("Scheduled time can't be less than expiry time")
