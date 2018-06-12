@@ -11,6 +11,7 @@ def check_scheduled_announcements():
     scheduled_announcement = Announcements.objects.filter(date_time_to_publish__lte=timezone.now())\
         .filter(sent_at=None)\
         .prefetch_related('groups__user_set')
+    scheduled_announcement.update(sent_at=timezone.now())
 
     for announcement in scheduled_announcement:
         group_list = announcement.groups.all()
@@ -25,6 +26,3 @@ def check_scheduled_announcements():
 
         for u in user_list:
             print("{} {} {}".format(u, announcement.title, announcement.message))
-
-    scheduled_announcement.update(sent_at=timezone.now())
-
