@@ -1,17 +1,30 @@
 from __future__ import absolute_import, unicode_literals
+
 from celery import task
-from .models import Announcements
 from django.utils import timezone
-from django.contrib.auth.models import User, Group
+
+from .models import Announcements
+
 
 @task()
 def check_scheduled_announcements():
-    scheduled_announcement = Announcements.objects.filter(is_active=False).filter(date_time_to_publish__lte=timezone.now())
-    for announcement in scheduled_announcement:
-        announcement.is_active = True
-        announcement.save()
-        group_list = announcement.groups.all().prefetch_related('id')
-        group_users = User.objects.values_list('username', flat=True).filter(groups__id__in=group_list).distinct()
+    scheduled_announcement = Announcements.objects.filter(date_time_to_publish__lte=timezone.now())\
+        .filter(sent_at=None)\
+        .prefetch_related('groups__user_set')
 
-        for user in group_users:
-            print("{} {} {}".format(user, announcement.title, announcement.message))
+    for announcement in scheduled_announcement:
+        group_list = announcement.groups.all()
+        user_list = []
+
+        for group in group_list:
+            users = group.user_set.all()
+            for u in users:
+                user_list.append(u)
+
+        user_list = list(set(user_list))
+
+        for u in user_list:
+            print("{} {} {}".format(u, announcement.title, announcement.message))
+
+    scheduled_announcement.update(sent_at=timezone.now())
+
