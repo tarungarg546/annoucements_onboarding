@@ -1,6 +1,7 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group, User
+
 from .models import Announcements
-from django.contrib.auth.models import User, Group
 
 
 class AnnouncementsAdmin(admin.ModelAdmin):
