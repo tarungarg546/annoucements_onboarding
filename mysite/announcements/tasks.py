@@ -9,24 +9,19 @@ from .models import Announcements
 @task()
 def check_scheduled_announcements():
     current_time = timezone.now()
-    scheduled_announcement = Announcements.objects.filter(date_time_to_publish__lte=current_time)\
-        .filter(sent_at=None)\
+    scheduled_announcement = Announcements.objects.filter(date_time_to_publish__lte=current_time, sent_at=None)\
         .prefetch_related('groups__user_set')
 
-    announcement_id = []
+    updated_announcement_ids = []
     for announcement in scheduled_announcement:
         group_list = announcement.groups.all()
-        user_list = []
 
-        for group in group_list:
-            users = group.user_set.all()
-            for u in users:
-                user_list.append(u)
+        user_list = [user for group in group_list for user in group.user_set.all()]
 
-        user_list = list(set(user_list))
+        user_list = set(user_list)
 
         for u in user_list:
             print("{} {} {}".format(u, announcement.title, announcement.message))
-        announcement_id.append(announcement.id)
+            updated_announcement_ids.append(announcement.id)
 
-    Announcements.objects.filter(id__in=announcement_id).update(sent_at=current_time)
+    Announcements.objects.filter(id__in=updated_announcement_ids).update(sent_at=current_time)

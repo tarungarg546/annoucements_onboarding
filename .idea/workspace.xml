@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0debd9ba-9ebe-4bcf-a4af-3ada77a0cd27" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/announcements/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_0728.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/announcements/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/announcements/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/announcements/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
@@ -18,20 +21,20 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/announcements/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
+            <state relative-caret-position="251">
+              <caret line="30" column="62" lean-forward="true" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mysite/announcements/tasks.py">
+      <file leaf-file-name="0001_squashed_0002_auto_20180612_1546.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_1546.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -39,10 +42,22 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tasks.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/announcements/tasks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="11" column="112" selection-start-line="11" selection-start-column="112" selection-end-line="11" selection-end-column="112" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,8 +66,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="144" column="36" lean-forward="true" selection-start-line="144" selection-start-column="36" selection-end-line="144" selection-end-column="36" />
+            <state relative-caret-position="311">
+              <caret line="146" column="1" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -103,13 +118,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/mysite/mysite/__init__.py" />
         <option value="$PROJECT_DIR$/mysite/mysite/celery.py" />
-        <option value="$PROJECT_DIR$/mysite/announcements/admin.py" />
         <option value="$PROJECT_DIR$/mysite/announcements/celery.py" />
         <option value="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0007_auto_20180610_2145.py" />
-        <option value="$PROJECT_DIR$/mysite/announcements/models.py" />
         <option value="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_0728.py" />
-        <option value="$PROJECT_DIR$/mysite/announcements/tasks.py" />
         <option value="$PROJECT_DIR$/mysite/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/models.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/tasks.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/admin.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_1509.py" />
+        <option value="$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_1546.py" />
       </list>
     </option>
   </component>
@@ -150,6 +167,21 @@
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
               <item name="announcements" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnnouncementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnouncementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="announcements" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnnouncementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnouncementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="announcements" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="announcements" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AnnouncementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -223,7 +255,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960877" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286385" />
@@ -269,14 +300,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/templates/announcements/announcements_change_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0007_remove_announcements_date_time_published.py" />
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0006_auto_20180604_1405.py" />
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0008_announcements_users.py" />
     <entry file="file://$PROJECT_DIR$/mysite/announcements/views.py" />
@@ -296,9 +319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -343,13 +363,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/signals.py" />
     <entry file="file://$PROJECT_DIR$/mysite/announcements/templates/admin/change_form.html" />
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/templates/announcements/announcements_change_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0007_remove_announcements_date_time_published.py" />
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0006_auto_20180604_1405.py" />
     <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0008_announcements_users.py" />
@@ -375,9 +388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -385,9 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -405,9 +412,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0002_auto_20180608_1646.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0002_auto_20180608_1646.py" />
     <entry file="file://$PROJECT_DIR$/mysite/announcements/celery.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -418,13 +423,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0007_auto_20180610_2145.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0007_auto_20180610_2145.py" />
     <entry file="file://$USER_HOME$/.virtualenvs/AnnouncementSystem/local/lib/python2.7/site-packages/django/contrib/auth/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -432,44 +431,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_0728.py">
+    <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        <state relative-caret-position="311">
+          <caret line="146" column="1" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/models.py">
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/templates/announcements/announcements_change_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
+        <state relative-caret-position="75">
+          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="11" column="112" selection-start-line="11" selection-start-column="112" selection-end-line="11" selection-end-column="112" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/announcements/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_0728.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="144" column="36" lean-forward="true" selection-start-line="144" selection-start-column="36" selection-end-line="144" selection-end-column="36" />
+        <state relative-caret-position="390">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/announcements/tasks.py">
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_1509.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        <state relative-caret-position="225">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="30" column="62" lean-forward="true" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/announcements/migrations/0001_squashed_0002_auto_20180612_1546.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
         </state>
       </provider>
     </entry>
