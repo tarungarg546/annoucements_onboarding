@@ -22,6 +22,8 @@ class Announcements(models.Model):
 
     sent_at = models.DateTimeField(editable=False, null=True, blank=True)
 
+    has_expired = models.BooleanField(default=False, help_text='Marked true when an announcement expires')
+
     def __str__(self):
         return self.title
 

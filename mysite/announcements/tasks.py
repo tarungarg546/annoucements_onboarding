@@ -30,3 +30,15 @@ def check_scheduled_announcements():
         announcement_id.append(announcement.id)
 
     Announcements.objects.filter(id__in=announcement_id).update(sent_at=current_time)
+
+@task()
+def expire_announcements():
+    current_time = timezone.now()
+    expired_announcements = Announcements.objects.exclude(sent_at=None).filter(has_expired=False).filter(date_time_expire__lte=current_time)
+    announcement_id = []
+
+    for announcement in expired_announcements:
+        print ("{} {} has expired!".format(announcement.title, announcement.message))
+        announcement_id.append(announcement.id)
+
+    Announcements.objects.filter(id__in=announcement_id).update(has_expired=True)
