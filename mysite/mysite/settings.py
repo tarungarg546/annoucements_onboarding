@@ -142,7 +142,7 @@ CELERY_TIMEZONE = 'Asia/Kolkata'
 CELERY_BEAT_SCHEDULE = {
     'check-scheduled-announcements': {
         'task': 'announcements.tasks.check_scheduled_announcements',
-        'schedule': crontab('/10'),
+        'schedule': crontab('*/10'),
     },
     'expire-scheduled-announcements': {
         'task': 'announcements.tasks.expire_announcements',
