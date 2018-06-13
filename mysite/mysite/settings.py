@@ -149,3 +149,5 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab('*/10'),
     },
 }
+
+LOGIN_REDIRECT_URL = '/'
