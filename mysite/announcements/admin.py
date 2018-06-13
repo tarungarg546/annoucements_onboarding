@@ -1,10 +1,10 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
 from .models import Announcements
-from django.contrib.auth.models import User, Group
 
 
 class AnnouncementsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'message', 'date_time_expire')
+    list_display = ('title', 'message','date_time_to_publish', 'date_time_expire')
     change_form_template = "announcements/announcements_change_form.html"
 
     def response_change(self, request, obj):
