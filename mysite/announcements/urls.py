@@ -1,8 +1,7 @@
-from django.conf.urls import url, include
-from django.contrib import admin
-from .views import home, register
+from django.conf.urls import url
+from . import views
 
 urlpatterns = [
-    url(r'^$', home),
-    url(r'^register/', register),
+    url(r'^$', views.home, name='home'),
+    url(r'^register/', views.register, name='register'),
 ]
