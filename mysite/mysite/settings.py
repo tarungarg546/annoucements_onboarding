@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'announcements.apps.AnnouncementsConfig'
+    'announcements.apps.AnnouncementsConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -3,11 +3,18 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django import forms
 from .forms import UserRegistrationForm
-from .models import Announcements
+from .models import Announcements, Status
 from django.contrib.auth.decorators import login_required
+from .serializers import StatusSerializer
+from rest_framework import generics
 
 
-@login_required()
+class ListStatusView(generics.RetrieveUpdateAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+
+
+@login_required(login_url='/login')
 def home(request):
     user_id = request.user.id
 

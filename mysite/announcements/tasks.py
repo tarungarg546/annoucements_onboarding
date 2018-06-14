@@ -3,7 +3,7 @@ from __future__ import absolute_import, unicode_literals
 from celery import task
 from django.utils import timezone
 
-from .models import Announcements
+from .models import Announcements, Status
 
 
 @task()
@@ -23,9 +23,13 @@ def check_scheduled_announcements():
 
         for u in user_list:
             print("{} {} {}".format(u, announcement.title, announcement.message))
-            updated_announcement_ids.append(announcement.id)
+            Status.objects.create(announcement_id=announcement.id, user_id=u.id,
+                                  status_last_update_time=current_time, status='yet to receive')
+
+        updated_announcement_ids.append(announcement.id)
 
     Announcements.objects.filter(id__in=updated_announcement_ids).update(sent_at=current_time)
+
 
 @task()
 def expire_announcements():
@@ -40,3 +44,5 @@ def expire_announcements():
         expired_announcement_id.append(announcement.id)
 
     Announcements.objects.filter(id__in=expired_announcement_id).update(has_expired=True)
+    Status.objects.filter(announcement_id__in=expired_announcement_id, status='yet to receive')\
+        .update(status='expired', status_last_update_time=current_time)
