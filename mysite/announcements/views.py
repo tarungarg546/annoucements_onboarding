@@ -3,15 +3,15 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django import forms
 from .forms import UserRegistrationForm
-from .models import Announcements, Status
+from .models import Announcements, AnnouncementDeliveryStatus
 from django.contrib.auth.decorators import login_required
-from .serializers import StatusSerializer
+from .serializers import AnnouncementDeliveryStatusSerializer
 from rest_framework import generics
 
 
-class ListStatusView(generics.RetrieveUpdateAPIView):
-    queryset = Status.objects.all()
-    serializer_class = StatusSerializer
+class RetrieveUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = AnnouncementDeliveryStatus.objects.all()
+    serializer_class = AnnouncementDeliveryStatusSerializer
 
 
 @login_required(login_url='/login')

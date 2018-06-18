@@ -1,9 +1,7 @@
 from __future__ import absolute_import, unicode_literals
-
 from celery import task
 from django.utils import timezone
-
-from .models import Announcements, Status
+from .models import Announcements, AnnouncementDeliveryStatus
 
 
 @task()
@@ -18,13 +16,19 @@ def check_scheduled_announcements():
         group_list = announcement.groups.all()
 
         user_list = [user for group in group_list for user in group.user_set.all()]
-
         user_list = set(user_list)
 
+        bulk_status_update = []
         for u in user_list:
             print("{} {} {}".format(u, announcement.title, announcement.message))
-            Status.objects.create(announcement_id=announcement.id, user_id=u.id,
-                                  status_last_update_time=current_time, status='yet to receive')
+            new_status_update = AnnouncementDeliveryStatus()
+            new_status_update.announcement_id = announcement.id
+            new_status_update.user_id = u.id
+            new_status_update.status_last_update_time = current_time
+            new_status_update.status = AnnouncementDeliveryStatus.YET_TO_RECEIVE
+            bulk_status_update.append(new_status_update)
+
+        AnnouncementDeliveryStatus.objects.bulk_create(bulk_status_update)
 
         updated_announcement_ids.append(announcement.id)
 
@@ -44,5 +48,6 @@ def expire_announcements():
         expired_announcement_id.append(announcement.id)
 
     Announcements.objects.filter(id__in=expired_announcement_id).update(has_expired=True)
-    Status.objects.filter(announcement_id__in=expired_announcement_id, status='yet to receive')\
-        .update(status='expired', status_last_update_time=current_time)
+    AnnouncementDeliveryStatus.objects.filter(announcement_id__in=expired_announcement_id,
+                                              status=AnnouncementDeliveryStatus.YET_TO_RECEIVE)\
+        .update(status=AnnouncementDeliveryStatus.EXPIRED, status_last_update_time=current_time)

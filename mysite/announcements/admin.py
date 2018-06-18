@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import Announcements, Status
+from .models import Announcements, AnnouncementDeliveryStatus
 
 
 class AnnouncementsAdmin(admin.ModelAdmin):
@@ -18,10 +18,10 @@ class AnnouncementsAdmin(admin.ModelAdmin):
         return super(AnnouncementsAdmin, self).response_change(request, obj)   
 
 
-class StatusAdmin(admin.ModelAdmin):
+class AnnouncementDeliveryStatusAdmin(admin.ModelAdmin):
     list_display = ('user', 'announcement', 'status_last_update_time', 'status')
     list_filter = ('status',)
 
 
 admin.site.register(Announcements, AnnouncementsAdmin)
-admin.site.register(Status, StatusAdmin)
+admin.site.register(AnnouncementDeliveryStatus, AnnouncementDeliveryStatusAdmin)

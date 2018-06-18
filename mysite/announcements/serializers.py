@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Status
+from .models import AnnouncementDeliveryStatus
 
 
-class StatusSerializer(serializers.ModelSerializer):
+class AnnouncementDeliveryStatusSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Status
+        model = AnnouncementDeliveryStatus
         fields = ('announcement', 'user', 'status_last_update_time', 'status')

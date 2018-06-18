@@ -33,22 +33,25 @@ class Announcements(models.Model):
             raise ValidationError("Scheduled time can't be less than expiry time")
 
 
-STATUS_CHOICES = (
-    ('seen', 'SEEN'),
-    ('yet to receive', 'YET TO RECEIVE'),
-    ('expired', 'EXPIRED'),
-    ('user left group', 'USER LEFT GROUP')
-)
-
-
 @python_2_unicode_compatible
-class Status(models.Model):
+class AnnouncementDeliveryStatus(models.Model):
+    SEEN = 0
+    YET_TO_RECEIVE = 1
+    EXPIRED = 2
+    USER_LEFT_GROUP = 3
+
+    STATUS_CHOICES = (
+        (SEEN, 'SEEN'),
+        (YET_TO_RECEIVE, 'YET TO RECEIVE'),
+        (EXPIRED, 'EXPIRED'),
+        (USER_LEFT_GROUP, 'USER LEFT GROUP')
+    )
     announcement = models.ForeignKey(Announcements, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     status_last_update_time = models.DateTimeField('status last update time',
                                                    help_text='The time at status got updated')
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='on time')
+    status = models.IntegerField(choices=STATUS_CHOICES)
 
     def __str__(self):
         return "{} {}".format(self.announcement, self.user)
