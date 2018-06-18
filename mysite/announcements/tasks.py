@@ -2,8 +2,10 @@ from __future__ import absolute_import, unicode_literals
 from celery import task
 from django.utils import timezone
 from .models import Announcements, AnnouncementDeliveryStatus
+from django.db import transaction
 
 
+@transaction.atomic
 @task()
 def check_scheduled_announcements():
     current_time = timezone.now()
@@ -12,26 +14,25 @@ def check_scheduled_announcements():
         .prefetch_related('groups__user_set')
 
     updated_announcement_ids = []
+    bulk_status_update = []
     for announcement in scheduled_announcement:
         group_list = announcement.groups.all()
 
         user_list = [user for group in group_list for user in group.user_set.all()]
         user_list = set(user_list)
 
-        bulk_status_update = []
         for u in user_list:
             print("{} {} {}".format(u, announcement.title, announcement.message))
             bulk_status_update.append(AnnouncementDeliveryStatus(announcement_id=announcement.id, user_id=u.id,
                                                                  status_last_update_time=current_time,
                                                                  status=AnnouncementDeliveryStatus.YET_TO_RECEIVE))
-
-        AnnouncementDeliveryStatus.objects.bulk_create(bulk_status_update)
-
         updated_announcement_ids.append(announcement.id)
 
+    AnnouncementDeliveryStatus.objects.bulk_create(bulk_status_update)
     Announcements.objects.filter(id__in=updated_announcement_ids).update(sent_at=current_time)
 
 
+@transaction.atomic
 @task()
 def expire_announcements():
     current_time = timezone.now()
