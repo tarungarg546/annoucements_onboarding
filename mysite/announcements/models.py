@@ -51,7 +51,7 @@ class AnnouncementDeliveryStatus(models.Model):
 
     status_last_update_time = models.DateTimeField('status last update time',
                                                    help_text='The time at status got updated')
-    status = models.IntegerField(choices=STATUS_CHOICES)
+    status = models.PositiveSmallIntegerField(choices=STATUS_CHOICES)
 
     def __str__(self):
         return "{} {}".format(self.announcement, self.user)

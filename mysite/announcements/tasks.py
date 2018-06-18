@@ -21,12 +21,9 @@ def check_scheduled_announcements():
         bulk_status_update = []
         for u in user_list:
             print("{} {} {}".format(u, announcement.title, announcement.message))
-            new_status_update = AnnouncementDeliveryStatus()
-            new_status_update.announcement_id = announcement.id
-            new_status_update.user_id = u.id
-            new_status_update.status_last_update_time = current_time
-            new_status_update.status = AnnouncementDeliveryStatus.YET_TO_RECEIVE
-            bulk_status_update.append(new_status_update)
+            bulk_status_update.append(AnnouncementDeliveryStatus(announcement_id=announcement.id, user_id=u.id,
+                                                                 status_last_update_time=current_time,
+                                                                 status=AnnouncementDeliveryStatus.YET_TO_RECEIVE))
 
         AnnouncementDeliveryStatus.objects.bulk_create(bulk_status_update)
 
