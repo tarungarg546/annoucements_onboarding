@@ -5,7 +5,6 @@ from .models import Announcements, AnnouncementDeliveryStatus
 from django.db import transaction
 
 
-@transaction.atomic
 @task()
 def check_scheduled_announcements():
     current_time = timezone.now()
@@ -27,12 +26,11 @@ def check_scheduled_announcements():
                                                                  status_last_update_time=current_time,
                                                                  status=AnnouncementDeliveryStatus.YET_TO_RECEIVE))
         updated_announcement_ids.append(announcement.id)
+    with transaction.atomic():
+        AnnouncementDeliveryStatus.objects.bulk_create(bulk_status_update)
+        Announcements.objects.filter(id__in=updated_announcement_ids).update(sent_at=current_time)
 
-    AnnouncementDeliveryStatus.objects.bulk_create(bulk_status_update)
-    Announcements.objects.filter(id__in=updated_announcement_ids).update(sent_at=current_time)
 
-
-@transaction.atomic
 @task()
 def expire_announcements():
     current_time = timezone.now()
@@ -45,7 +43,8 @@ def expire_announcements():
         print ("{} {} has expired!".format(announcement.title, announcement.message))
         expired_announcement_id.append(announcement.id)
 
-    Announcements.objects.filter(id__in=expired_announcement_id).update(has_expired=True)
-    AnnouncementDeliveryStatus.objects.filter(announcement_id__in=expired_announcement_id,
-                                              status=AnnouncementDeliveryStatus.YET_TO_RECEIVE)\
-        .update(status=AnnouncementDeliveryStatus.EXPIRED, status_last_update_time=current_time)
+    with transaction.atomic():
+        Announcements.objects.filter(id__in=expired_announcement_id).update(has_expired=True)
+        AnnouncementDeliveryStatus.objects.filter(announcement_id__in=expired_announcement_id,
+                                                  status=AnnouncementDeliveryStatus.YET_TO_RECEIVE)\
+            .update(status=AnnouncementDeliveryStatus.EXPIRED, status_last_update_time=current_time)
