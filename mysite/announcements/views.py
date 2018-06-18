@@ -3,11 +3,22 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django import forms
 from .forms import UserRegistrationForm
-from .models import Announcements
+from .models import Announcements, AnnouncementDeliveryStatus
 from django.contrib.auth.decorators import login_required
+from .serializers import AnnouncementDeliveryStatusSerializer
+from rest_framework import generics
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
-@login_required()
+class RetrieveUpdateView(generics.RetrieveUpdateAPIView):
+    authentication_classes = (SessionAuthentication, BasicAuthentication)
+    permission_classes = (IsAuthenticated,)
+    queryset = AnnouncementDeliveryStatus.objects.all()
+    serializer_class = AnnouncementDeliveryStatusSerializer
+
+
+@login_required(login_url='/login')
 def home(request):
     user_id = request.user.id
 

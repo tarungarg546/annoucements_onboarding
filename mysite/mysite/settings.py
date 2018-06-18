@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'announcements.apps.AnnouncementsConfig'
+    'announcements.apps.AnnouncementsConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -151,3 +152,13 @@ CELERY_BEAT_SCHEDULE = {
 }
 
 LOGIN_REDIRECT_URL = '/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}

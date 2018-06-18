@@ -1,9 +1,8 @@
 from __future__ import absolute_import, unicode_literals
-
 from celery import task
 from django.utils import timezone
-
-from .models import Announcements
+from .models import Announcements, AnnouncementDeliveryStatus
+from django.db import transaction
 
 
 @task()
@@ -14,18 +13,23 @@ def check_scheduled_announcements():
         .prefetch_related('groups__user_set')
 
     updated_announcement_ids = []
+    bulk_status_update = []
     for announcement in scheduled_announcement:
         group_list = announcement.groups.all()
 
         user_list = [user for group in group_list for user in group.user_set.all()]
-
         user_list = set(user_list)
 
         for u in user_list:
             print("{} {} {}".format(u, announcement.title, announcement.message))
-            updated_announcement_ids.append(announcement.id)
+            bulk_status_update.append(AnnouncementDeliveryStatus(announcement_id=announcement.id, user_id=u.id,
+                                                                 status_last_update_time=current_time,
+                                                                 status=AnnouncementDeliveryStatus.YET_TO_RECEIVE))
+        updated_announcement_ids.append(announcement.id)
+    with transaction.atomic():
+        AnnouncementDeliveryStatus.objects.bulk_create(bulk_status_update)
+        Announcements.objects.filter(id__in=updated_announcement_ids).update(sent_at=current_time)
 
-    Announcements.objects.filter(id__in=updated_announcement_ids).update(sent_at=current_time)
 
 @task()
 def expire_announcements():
@@ -39,4 +43,8 @@ def expire_announcements():
         print ("{} {} has expired!".format(announcement.title, announcement.message))
         expired_announcement_id.append(announcement.id)
 
-    Announcements.objects.filter(id__in=expired_announcement_id).update(has_expired=True)
+    with transaction.atomic():
+        Announcements.objects.filter(id__in=expired_announcement_id).update(has_expired=True)
+        AnnouncementDeliveryStatus.objects.filter(announcement_id__in=expired_announcement_id,
+                                                  status=AnnouncementDeliveryStatus.YET_TO_RECEIVE)\
+            .update(status=AnnouncementDeliveryStatus.EXPIRED, status_last_update_time=current_time)
